@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  onCambia(event){ //Del controlador a la vista
+    alert (event);
+    //this.cambia.emit(this.color);
+  }
 }
+
+

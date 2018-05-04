@@ -4,3 +4,18 @@
     background-color: black;
     margin: 10px;
 }
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.cajita{
+    display: inline-block;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+}
