@@ -17,6 +17,17 @@ import{HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { LoginComponent } from './auth/login/login.component';
+import { LoginService } from './auth/loginService/login.service';
+import { LoaderComponent } from './elements/loader/loader.component';
+import { NavComponent } from './navigation/nav/nav.component';
+import {BreakpointObserver, MediaMatcher} from '@angular/cdk/layout';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './panel/home/home.component';
+import { ApuestasComponent } from './panel/apuestas/apuestas.component';
+import { ConfiguracionComponent } from './panel/configuracion/configuracion.component';
+
+import { PanelComponent } from './panel/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +36,24 @@ import { MaterialModule } from './material.module';
     TituloComponent,
     ContentComponent,
     BoxBlueComponent,
-    BoxRedComponent
+    BoxRedComponent,
+    LoginComponent,
+    LoaderComponent,
+    NavComponent,
+    HomeComponent,
+    ApuestasComponent,
+    ConfiguracionComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MaterialModule,
     FormsModule, //Agregado
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [InstagramService], //Se deben poner aqui tambien los servicios
+  providers: [InstagramService, LoginService, BreakpointObserver, MediaMatcher], //Se deben poner aqui tambien los servicios
   bootstrap: [AppComponent]
 })
 export class AppModule { }

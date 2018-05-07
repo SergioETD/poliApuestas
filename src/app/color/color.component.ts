@@ -1,5 +1,5 @@
 import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
-import {InstagramService} from '../services/instagram.service' //Importar el servicio
+import {InstagramService} from '../services/instagram.service'; //Importar el servicio
 
 @Component({
   selector: 'app-color',

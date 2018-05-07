@@ -4,14 +4,15 @@
 <button mat-raised-button color="primary" type="button" (click) = "onClick()">Click</button>
 <form (submit)="onSubmit(form)" #form = "ngForm">
         <mat-form-field class="example-full-width">
-                <input  matInput type="text" placeholder="Algo" [(ngModel)]="title" name="Title" >
+                <input  matInput type="text" placeholder="Algo" [(ngModel)]="title" name="Title" required minlength="6">
         </mat-form-field>
             
     
     <div *ngIf = "!form.valid">
         <p>Invalido</p>
     </div>
-    <button type="submit" [disabled] = "!form.valid">Enviar</button>
+
+    <button mat-raised-button color="primary" type="submit" [disabled] = "!form.valid">Enviar</button>
 </form>
 <img src = {{foto}}>
 <!--<input type="text" placeholder="Titulo"/>-->

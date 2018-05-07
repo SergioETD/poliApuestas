@@ -1,0 +1,17 @@
+
+ <form  #form = "ngForm" (submit) = "validarDatos(form)" >
+         <mat-form-field class="example-full-width">
+                 <input  matInput type="text" placeholder="Correo" required  [(ngModel)]="Correo" name="correo" email>
+         </mat-form-field>
+
+         <mat-form-field class="example-full-width">
+            <input  matInput type="password" placeholder="Pass" [(ngModel)]="Pass" name="pass" required >
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="sumbit" [disabled] = "!form.valid">Log In</button>
+ </form>
+
+ <p *ngIf = "loading == true">Validando</p>
+ <p *ngIf = "loading == false">{{resultado}}</p>
+ 
+ 
