@@ -1,5 +1,6 @@
 
- <form  #form = "ngForm" (submit) = "validarDatos(form)" >
+ <div>
+ <form  #form = "ngForm" (submit) = "validarDatos(form)"   fxLayout="column" fxLayoutAlign="space-between center"  >
          <mat-form-field class="example-full-width">
                  <input  matInput type="text" placeholder="Correo" required  [(ngModel)]="Correo" name="correo" email>
          </mat-form-field>
@@ -10,6 +11,7 @@
         
         <button mat-raised-button color="primary" type="sumbit" [disabled] = "!form.valid">Log In</button>
  </form>
+</div>
 
  <p *ngIf = "loading == true">Validando</p>
  <p *ngIf = "loading == false">{{resultado}}</p>

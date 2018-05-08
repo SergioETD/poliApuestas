@@ -28,6 +28,9 @@ import { ApuestasComponent } from './panel/apuestas/apuestas.component';
 import { ConfiguracionComponent } from './panel/configuracion/configuracion.component';
 
 import { PanelComponent } from './panel/panel/panel.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+//import {BREAKPOINTS, DEFAULT_BREAKPOINTS} from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import { PanelComponent } from './panel/panel/panel.component';
     HomeComponent,
     ApuestasComponent,
     ConfiguracionComponent,
-    PanelComponent
+    PanelComponent,
+    FlexLayoutModule
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { PanelComponent } from './panel/panel/panel.component';
     MaterialModule,
     FormsModule, //Agregado
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [InstagramService, LoginService, BreakpointObserver, MediaMatcher], //Se deben poner aqui tambien los servicios
   bootstrap: [AppComponent]

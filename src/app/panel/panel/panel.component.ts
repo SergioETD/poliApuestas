@@ -9,6 +9,17 @@ export class PanelComponent implements OnInit {
 
   constructor() { }
 
+  rutas = [{
+        nombre: 'Home', link: '/admin/home'
+      },
+      {
+        nombre: 'Apuestas', link: '/admin/apuestas'
+      },
+      {
+        nombre: 'Configuracion', link: '/admin/config'
+      }
+  ];
+
   ngOnInit() {
   }
 
