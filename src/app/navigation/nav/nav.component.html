@@ -8,7 +8,6 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-    
       <a *ngFor = "let i of data" mat-list-item routerLink='{{i.link}}' routerLinkActive='active'>{{i.nombre}}</a>
     </mat-nav-list>
   </mat-sidenav>

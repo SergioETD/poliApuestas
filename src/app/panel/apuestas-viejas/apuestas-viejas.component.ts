@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApuestasService } from '../../services/apuestas.service';
 
 @Component({
   selector: 'app-apuestas-viejas',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApuestasViejasComponent implements OnInit {
 
-  constructor() { }
+  apuestas = [];
+  columnasApuestas = ['Event','Name','Amount'];
+
+  constructor(private apuestaService: ApuestasService) { }
 
   ngOnInit() {
+    this.onUpdateApuestas();
   }
 
+
+  onUpdateApuestas(){
+    this.apuestaService.list().subscribe(
+      result => {
+        const items = []; //Es necesario
+        for(let key of Object.keys(result)){
+          items.push(result[key]);
+        }
+        this.apuestas = items;
+       
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+  }
 }

@@ -1,3 +1,23 @@
-<p>
-  apuestas-viejas works!
-</p>
+<div class="example-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="apuestas">
+      
+      <ng-container matColumnDef="Event">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.evento}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Amount">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="columnasApuestas"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnasApuestas;"></mat-row>
+
+    </mat-table>
+  </div>

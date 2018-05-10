@@ -13,39 +13,9 @@ import { ApuestasService } from '../../services/apuestas.service';
 })
 export class ApuestasComponent implements OnInit {
 
-  selectListaEventos = [];
   
   constructor(private eventService: EventosService, private apuestaService: ApuestasService) { 
   }
 
-  ngOnInit() {
-    this.eventService.list().subscribe(
-      result => {
-        const items = []; //Es necesario
-        for(let key of Object.keys(result)){
-          items.push(result[key]);
-        }
-        console.log(items);
-        this.selectListaEventos = items;
-      },
-      error =>{}
-    );
-
-    console.log(this.selectListaEventos);
-  }
-
-  createApuesta(form){
-    const apuesta: ApuestaModel = new ApuestaModel(form.value.evento, form.value.date, form.value.amount);
-    this.apuestaService.create(apuesta).subscribe(
-      result => {
-        console.log(result);
-      },
-      error=>{
-        console.log("Error: "+error);
-      }
-    )
-  }
-
-
-
+  ngOnInit() {}
 }

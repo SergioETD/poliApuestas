@@ -34,6 +34,9 @@ export class ApuestasNuevasComponent implements OnInit {
   }
 
   createApuesta(form){
+    console.log("Event is:"+form.value.evento);
+    console.log("Event is:"+form.value.date);
+    console.log("Event is:"+form.value.amount);
     const apuesta: ApuestaModel = new ApuestaModel(form.value.evento, form.value.date, form.value.amount);
     this.apuestaService.create(apuesta).subscribe(
       result => {

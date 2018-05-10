@@ -3,7 +3,7 @@
 
     <mat-form-field>
        <mat-select placeholder="Eventos">
-         <mat-option *ngFor="let lista of selectListaEventos" [value]="lista.id" name="evento">
+         <mat-option *ngFor="let lista of selectListaEventos" [value]="lista.id" name="evento" ngModel>
            {{ lista.title}}
          </mat-option>
        </mat-select>
