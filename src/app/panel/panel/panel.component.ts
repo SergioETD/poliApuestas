@@ -13,11 +13,15 @@ export class PanelComponent implements OnInit {
         nombre: 'Home', link: '/admin/home'
       },
       {
+        nombre: 'Eventos', link: '/admin/eventos'
+      },
+      {
         nombre: 'Apuestas', link: '/admin/apuestas'
       },
       {
         nombre: 'Configuracion', link: '/admin/config'
-      }
+      },
+      
   ];
 
   ngOnInit() {

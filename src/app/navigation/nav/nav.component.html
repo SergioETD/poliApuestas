@@ -8,9 +8,7 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <!--<a mat-list-item routerLink='home' routerLinkActive='active'>Home</a>
-      <a mat-list-item routerLink='apuesta' routerLinkActive='active'>Apuestas</a>
-      <a mat-list-item routerLink='config' routerLinkActive='active' >Configuracion</a>-->
+    
       <a *ngFor = "let i of data" mat-list-item routerLink='{{i.link}}' routerLinkActive='active'>{{i.nombre}}</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,7 +22,7 @@
         *ngIf="(isHandset | async)!.matches">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Application Title</span>
+      <span>PoliApuestas</span>
     </mat-toolbar>
 
     <!--<my-dashboard></my-dashboard>-->

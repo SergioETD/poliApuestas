@@ -29,7 +29,16 @@ import { ConfiguracionComponent } from './panel/configuracion/configuracion.comp
 
 import { PanelComponent } from './panel/panel/panel.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ApuestasViejasComponent } from './panel/apuestas-viejas/apuestas-viejas.component';
+import { ApuestasNuevasComponent } from './panel/apuestas-nuevas/apuestas-nuevas.component';
 //import {BREAKPOINTS, DEFAULT_BREAKPOINTS} from '@angular/flex-layout';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { EventCreateComponent } from './panel/event/event-create/event-create.component';
+import { EventoComponent } from './evento/evento.component';
+import { EventosService } from './services/eventos.service';
+import { ApuestasService } from './services/apuestas.service';
 
 
 @NgModule({
@@ -47,7 +56,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     ApuestasComponent,
     ConfiguracionComponent,
     PanelComponent,
-    FlexLayoutModule
+    ApuestasViejasComponent,
+    ApuestasNuevasComponent,
+    EventCreateComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +68,14 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FormsModule, //Agregado
     HttpClientModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule,
+    MatDatepickerModule
   ],
-  providers: [InstagramService, LoginService, BreakpointObserver, MediaMatcher], //Se deben poner aqui tambien los servicios
-  bootstrap: [AppComponent]
+  providers: [InstagramService, LoginService, BreakpointObserver, MediaMatcher, EventosService, ApuestasService], //Se deben poner aqui tambien los servicios
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EventCreateComponent
+  ]
 })
 export class AppModule { }

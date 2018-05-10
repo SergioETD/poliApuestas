@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
-import { EventoComponent } from '../../evento/evento.component';
-import { EventosService } from '../../services/eventos.service';
 import { ApuestaModel } from '../../shared/models/apuesta.model';
+import { EventosService } from '../../services/eventos.service';
 import { ApuestasService } from '../../services/apuestas.service';
 
 @Component({
-  selector: 'app-apuestas',
-  templateUrl: './apuestas.component.html',
-  styleUrls: ['./apuestas.component.css']
+  selector: 'app-apuestas-nuevas',
+  templateUrl: './apuestas-nuevas.component.html',
+  styleUrls: ['./apuestas-nuevas.component.css']
 })
-export class ApuestasComponent implements OnInit {
+export class ApuestasNuevasComponent implements OnInit {
 
   selectListaEventos = [];
   
@@ -45,7 +44,5 @@ export class ApuestasComponent implements OnInit {
       }
     )
   }
-
-
 
 }
